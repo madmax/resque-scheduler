@@ -249,11 +249,11 @@ module ResqueScheduler
   private
 
     def job_to_hash(klass, args)
-      {:class => klass.to_s, :args => args, :queue => queue_from_class(klass)}
+      {:custom_job_class => klass.to_s, :class => klass.to_s, :args => args, :queue => queue_from_class(klass)}
     end
 
     def job_to_hash_with_queue(queue, klass, args)
-      {:class => klass.to_s, :args => args, :queue => queue}
+      {:custom_job_class => klass.to_s, :class => klass.to_s, :args => args, :queue => queue}
     end
 
     def clean_up_timestamp(key, timestamp)
